@@ -4,13 +4,12 @@ kind: Service
 metadata:
   name: blog
 spec:
-  type: LoadBalancer
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 2368
   selector:
     app: blog
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 2368
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -30,13 +29,13 @@ spec:
     spec:
       containers:
       - name: blog
-        image:  ghost:4.3.2-alpine
+        image:  ghost:4.3.3-alpine    
         imagePullPolicy: Always
         ports:
         - containerPort: 2368
         env:
         - name: url
-          value: http://blog.sahilj.live #url to which you have pointed the lb ip 
+          value: http://blog1.sahilj.live #url to which you have pointed the lb ip 
         volumeMounts:
         - mountPath: /var/lib/ghost/content
           name: content
