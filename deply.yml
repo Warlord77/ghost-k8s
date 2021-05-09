@@ -35,7 +35,7 @@ spec:
         - containerPort: 2368
         env:
         - name: url
-          value: http://blog1.sahilj.live #url to which you have pointed the lb ip 
+          value: <---url-of-website---> #url to which you have pointed the lb ip 
         volumeMounts:
         - mountPath: /var/lib/ghost/content
           name: content

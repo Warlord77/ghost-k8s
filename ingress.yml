@@ -11,7 +11,7 @@ spec:
       - blog1.sahilj.live 
       secretName: blog-ingress-cert
   rules:
-  - host: blog1.sahilj.live
+  - host: <---domain-of-website--->
     http:
       paths:
       - backend:

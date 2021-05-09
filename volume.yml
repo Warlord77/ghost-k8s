@@ -7,5 +7,5 @@ spec:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 5Gi  #this is block volume for ghost 
   storageClassName: do-block-storage

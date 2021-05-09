@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: warlord77@disroot.org # IMPORTANT: Replace with a valid email from your organization
+    email: <---issuer-email-id---> # IMPORTANT: Replace with a valid email from your organization
     privateKeySecretRef:
       name: letsencrypt
     solvers:
